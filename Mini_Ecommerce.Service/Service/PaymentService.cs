@@ -16,6 +16,11 @@ namespace Mini_Ecommerce.Service.Service
 			throw new NotImplementedException();
 		}
 
+		public Task<object?> AddpaymentDetailsAsync()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Task<ResultArgs> GetpaymentDetailsAsync()
 		{
 			throw new NotImplementedException();
