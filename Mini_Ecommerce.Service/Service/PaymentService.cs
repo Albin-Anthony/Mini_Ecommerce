@@ -44,9 +44,32 @@ namespace Mini_Ecommerce.Service.Service
 			return RresultArgs;
 		}
 
-		public Task<ResultArgs> GetUserDetailsAsync()
+		public async Task<ResultArgs> GetUserDetailsAsync()
 		{
-			throw new NotImplementedException();
+			ResultArgs ResultArgs = new ResultArgs();
+			try
+			{
+				var objUserDetail = await _userDetailRepository.GetUserDetailsAsync();
+
+				ResultArgs.MessageTitle = MessageCatlog.MessageTitle.UserDetails;
+
+				if (objUserDetail != null)
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.Success;
+					ResultArgs.ResultData = objUserDetail.UserDetailsList;
+				}
+				else
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.NoRecordFound;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.NoRecordFound;
+				}
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return ResultArgs;
 		}
 	}
 }

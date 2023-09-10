@@ -44,9 +44,19 @@ namespace Mini_Ecommerce.Repository.Repository
 			return ReturnValue;
 		}
 
-		public Task<PaymentDetailResults> GetUserDetailsAsync()
+		public async Task<PaymentDetailResults> GetUserDetailsAsync()
 		{
-			throw new NotImplementedException();
+			PaymentDetailResults userDetailResult = new PaymentDetailResults();
+			try
+			{
+
+				userDetailResult.UserDetailsList = (await _configuration.QueryAsync<PamentDetailDTO>(StroredProc.Payment.SelectPament)).ToList();
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return userDetailResult;
 		}
 	}
 }
