@@ -8,12 +8,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mini_Ecommerce.DBEngine\Mini_Ecommerce.DBEngine.csproj" />
+    <ProjectReference Include="..\Mini_Ecommerce.Framework\Mini_Ecommerce.Framework.csproj" />
     <ProjectReference Include="..\Mini_Ecommerce.Models\Mini_Ecommerce.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interface\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
 
 </Project>
