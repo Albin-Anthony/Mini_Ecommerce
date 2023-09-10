@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Mini_Ecommerce.Service\Mini_Ecommerce.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

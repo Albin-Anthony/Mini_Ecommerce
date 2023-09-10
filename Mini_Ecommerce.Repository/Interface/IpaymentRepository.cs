@@ -10,7 +10,7 @@ namespace Mini_Ecommerce.Repository.Interface
 {
 	public interface IpaymentRepository
 	{
-		Task<PaymentDetailResults> GetpaymentDetailsAsync();
+		Task<PaymentDetailResults> GetUserDetailsAsync();
 
 		Task<int> AddUserDetailsAsync(PamentDetailDTO userDetailDTO);
 
