@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Mini_Ecommerce.Framework;
 using Mini_Ecommerce.Models.Input;
 using Mini_Ecommerce.Service.Interface;
 
@@ -19,9 +20,9 @@ namespace Mini_Ecommerce.API.Areas.Controller
 
 		// GET: api/<ProductController>
 		[HttpGet]
-		public IEnumerable<string> Get()
+		public async Task<IActionResult> GetUserDetailsAsync()
 		{
-			return new string[] { "value1", "value2" };
+			return Ok(await _productDetailservice.GetUserDetailsAsync());
 		}
 
 		// GET api/<ProductController>/5
@@ -42,8 +43,9 @@ namespace Mini_Ecommerce.API.Areas.Controller
 
 		// PUT api/<ProductController>/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		public async Task<IActionResult> updateUserDetailsAsync([FromBody] ProductDetailDTO productDetail)
 		{
+			return Ok(await _productDetailservice.UpdateUserDetailsAsync(productDetail));
 		}
 
 		// DELETE api/<ProductController>/5

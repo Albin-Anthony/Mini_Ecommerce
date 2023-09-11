@@ -21,10 +21,10 @@ namespace Mini_Ecommerce.Framework
 		{
 			public const string ProductId = "@ProductId";
 			public const string Name = "@Name";
-			public const string Brand = "@Barnd";
+			public const string Brand = "@Brand";
 			public const string Model = "@Model";
-			public const string ImageURL = "@Image";
-			public const string Category = "@ProductDetails";
+			public const string ImageURL = "@ImageURL";
+			public const string Category = "@Category";
 			public const string Price = "@Price";
 		}
 	}

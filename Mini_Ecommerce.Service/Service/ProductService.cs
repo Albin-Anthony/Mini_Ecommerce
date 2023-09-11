@@ -51,9 +51,32 @@ namespace Mini_Ecommerce.Service.Service
 			throw new NotImplementedException();
 		}
 
-		public Task<ResultArgs> GetUserDetailsAsync()
+		public async Task<ResultArgs> GetUserDetailsAsync()
 		{
-			throw new NotImplementedException();
+			ResultArgs ResultArgs = new ResultArgs();
+			try
+			{
+				var objUserDetail = await _productRepository.GetUserDetailsAsync();
+
+				ResultArgs.MessageTitle = MessageCatlog.MessageTitle.UserDetails;
+
+				if (objUserDetail != null)
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.Success;
+					ResultArgs.ResultData = objUserDetail.UserDetailsList;
+				}
+				else
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.NoRecordFound;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.NoRecordFound;
+				}
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return ResultArgs;
 		}
 
 		public Task<ResultArgs> GetUserDetailsByIdAsync(int Id)
@@ -61,9 +84,29 @@ namespace Mini_Ecommerce.Service.Service
 			throw new NotImplementedException();
 		}
 
-		public Task<ResultArgs> UpdateUserDetailsAsync(ProductDetailDTO userDetailDTO)
+		public async Task<ResultArgs> UpdateUserDetailsAsync(ProductDetailDTO productDetail)
 		{
-			throw new NotImplementedException();
+			ResultArgs ResultArgs = new ResultArgs();
+			try
+			{
+				int objUserDetail = await _productRepository.UpdateUserDetailsAsync(productDetail);
+				if (objUserDetail == 0)
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.SaveSuccess;
+
+				}
+				else
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Failed;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.SaveFailed;
+				}
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return ResultArgs;
 		}
 	}
 }
