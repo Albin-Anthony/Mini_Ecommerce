@@ -24,6 +24,10 @@ namespace Mini_Ecommerce.API
 			services.AddTransient<IpaymentRepository, PaymentRepository>();
 			services.AddTransient<IpaymentService, PaymentService>();
 
+			services.AddTransient<IProductRepository, ProductRepository>();
+
+			services.AddTransient<IproductService, ProductService>();
+
 
 
 			services.AddControllers();

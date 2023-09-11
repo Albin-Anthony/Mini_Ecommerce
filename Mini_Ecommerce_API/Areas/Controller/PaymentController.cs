@@ -4,16 +4,16 @@ using Mini_Ecommerce.Service.Interface;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Mini_Ecommerce.API.Areas.Product
+namespace Mini_Ecommerce.API.Areas.Controller
 {
-	[Route("api/[controller]")]
+	[Route("api/[controller]/[Action]")]
 	[ApiController]
 	public class PaymentController : ControllerBase
 	{
 		private readonly IpaymentService _userDetailsService;
 
-        public PaymentController(IpaymentService userDetailsService)
-        {
+		public PaymentController(IpaymentService userDetailsService)
+		{
 			_userDetailsService = userDetailsService;
 
 		}
@@ -33,7 +33,7 @@ namespace Mini_Ecommerce.API.Areas.Product
 		}
 
 
-		
+
 
 	}
 }

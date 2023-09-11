@@ -10,7 +10,7 @@ namespace Mini_Ecommerce.Service.Interface
 {
 	public interface IpaymentService
 	{
-		Task<ResultArgs> AddUserDetailsAsync(PamentDetailDTO userDetailDTO);
+		Task<ResultArgs> AddUserDetailsAsync(PamentDetailDTO userDetail);
 
 		Task<ResultArgs> GetUserDetailsAsync();
 

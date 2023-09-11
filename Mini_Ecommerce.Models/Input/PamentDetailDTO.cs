@@ -15,4 +15,17 @@ namespace Mini_Ecommerce.Models.Input
 		public int CVVCode { get; set; }
 
 	}
+
+	public class ProductDetailDTO
+	{
+		public int ProductId { get; set; }
+		public string Name { get; set; }
+		public string Brand { get; set; }
+		public string Model { get; set; }
+		public string ImageURL { get; set; }
+		public string Category { get; set; }
+		public string Price { get; set; }
+
+
+	}
 }

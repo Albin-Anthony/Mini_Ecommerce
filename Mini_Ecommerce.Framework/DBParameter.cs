@@ -16,5 +16,16 @@ namespace Mini_Ecommerce.Framework
 			public const string ExpiryDate = "@ExpiryDate";
 			public const string CVVCode = "@CVVCode";
 		}
+
+		public class product
+		{
+			public const string ProductId = "@ProductId";
+			public const string Name = "@Name";
+			public const string Brand = "@Brand";
+			public const string Model = "@Model";
+			public const string ImageURL = "@ImageURL";
+			public const string Category = "@Category";
+			public const string Price = "@Price";
+		}
 	}
 }
