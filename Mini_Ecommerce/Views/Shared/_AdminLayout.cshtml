@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Mini_Ecommerce.Framework;
+<!DOCTYPE html>
 <html lang="en" data-topbar-color="brand">
 
 <!-- Mirrored from coderthemes.com/wb/minton/layouts/material/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Sep 2023 17:34:34 GMT -->
@@ -396,7 +397,7 @@
                         @*<li class="menu-title">Navigation</li>*@
 
                         <li>
-                            <a href="">
+                            <a href="admin-dashboard">
                                 <i class="mdi mdi-view-dashboard"></i>
                                 <span>Dashboard </span>
                             </a>
@@ -414,11 +415,9 @@
                             <div class="collapse" id="sidebarTasks">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="task-list.html">Categories</a>
+                                        <a href="Categories-Details">Categories Details</a>
                                     </li>
-                                    <li>
-                                        <a href="task-details.html">Details</a>
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         </li>
@@ -431,19 +430,14 @@
                             <div class="collapse" id="sidebarproduct">
                                 <ul class="nav-second-level">
                                     <li>
-                                        <a href="ecommerce-products.html">Products List</a>
+                                        <a href="product-List-view">Products Details</a>
+                                    </li>
+                         
+                                    <li>
+                                        <a href="Create-Product">Create Product</a>
                                     </li>
                                     <li>
-                                        <a href="ecommerce-products-grid.html">Products Grid</a>
-                                    </li>
-                                    <li>
-                                        <a href="ecommerce-product-detail.html">Product Detail</a>
-                                    </li>
-                                    <li>
-                                        <a href="ecommerce-product-create.html">Create Product</a>
-                                    </li>
-                                    <li>
-                                        <a href="ecommerce-cart.html">Shopping Cart</a>
+                                        <a href="Cart">Shopping Cart</a>
                                     </li>
                                     <li>
                                         <a href="ecommerce-checkout.html">Checkout</a>
@@ -461,11 +455,9 @@
                                 <ul class="nav-second-level">
                              
                                     <li>
-                                        <a href="ecommerce-orders.html">Orders</a>
+                                        <a href="Orders">Orders</a>
                                     </li>
-                                    <li>
-                                        <a href="ecommerce-orders-detail.html">Order Detail</a>
-                                    </li>
+                                   
                                 </ul>
                             </div>
                         </li>
