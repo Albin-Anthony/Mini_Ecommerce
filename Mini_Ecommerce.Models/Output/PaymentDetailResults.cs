@@ -12,5 +12,11 @@ namespace Mini_Ecommerce.Models.Output
 		public PamentDetailDTO? UserDetails { get; set; }
 		public List<PamentDetailDTO>? UserDetailsList { get; set; }
 	}
+
+	public class ProductDetailResults
+	{
+		public ProductDetailDTO? UserDetails { get; set; }
+		public List<ProductDetailDTO>? UserDetailsList { get; set; }
+	}
 }
 
