@@ -14,9 +14,9 @@ namespace Mini_Ecommerce.Repository.Interface
 
 		Task<ProductDetailDTO> GetUserDetailsByIdAsync(int Id);
 
-		Task<int> AddUserDetailsAsync(ProductDetailDTO userDetailDTO);
+		Task<int> AddUserDetailsAsync(ProductDetailDTO productDetail);
 
-		Task<int> UpdateUserDetailsAsync(ProductDetailDTO userDetailDTO);
+		Task<int> UpdateUserDetailsAsync(ProductDetailDTO productDetail);
 
 		Task<int> DeleteUserDetailsAsync(int Id);
 	}
