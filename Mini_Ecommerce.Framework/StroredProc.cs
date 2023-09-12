@@ -15,6 +15,12 @@ namespace Mini_Ecommerce.Framework
 			
 		}
 
+        public class Register
+        {
+			public const string SaveRegister = "[dbo].[SaveRegisterDetails]";
+
+        }
+
         public class Product
         {
 			public const string InsertProduct = "[Product].[InsertProduct]";
