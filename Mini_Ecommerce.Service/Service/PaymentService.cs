@@ -25,7 +25,7 @@ namespace Mini_Ecommerce.Service.Service
 			var RresultArgs = new ResultArgs();
 
 			var ResponseId = await _userDetailRepository.AddUserDetailsAsync(userDetailDTO);
-			if (ResponseId == MessageCatlog.ErrorCodes.Success)
+			if (ResponseId != MessageCatlog.ErrorCodes.Success)
 			{
 				RresultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
 				RresultArgs.StatusMessage = MessageCatlog.ErrorMessages.Success;

@@ -47,9 +47,20 @@ namespace Mini_Ecommerce.Repository.Repository
 			return ReturnValue;
 		}
 
-		public Task<int> DeleteUserDetailsAsync(int Id)
+		public async Task<int> DeleteUserDetailsAsync(int Id)
 		{
-			throw new NotImplementedException();
+			Int16 ReturnValue = 0;
+			var parameters = new DynamicParameters();
+			try
+			{
+				parameters.Add(DBParameter.product.ProductId, Id, DbType.Int32);
+				ReturnValue = await _dapperHandler.ExecuteScalarAsync<Int16>(StroredProc.Product.deleteProduct, parameters);
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return ReturnValue;
 		}
 
 		public async Task<ProductDetailResults> GetUserDetailsAsync()
@@ -67,24 +78,41 @@ namespace Mini_Ecommerce.Repository.Repository
 			return userDetailResult;
 		}
 
-		public Task<ProductDetailDTO> GetUserDetailsByIdAsync(int Id)
+		public async Task<ProductDetailDTO> GetUserDetailsByIdAsync(int Id)
 		{
-			throw new NotImplementedException();
+			ProductDetailDTO ProductDetail = new ProductDetailDTO();
+
+			try
+			{
+				DynamicParameters dynamicParameters = new DynamicParameters();
+
+				dynamicParameters.Add(DBParameter.product.ProductId, Id, DbType.Int32);
+
+
+
+				ProductDetail = (await _dapperHandler.QuerySingleAsync<ProductDetailDTO>(StroredProc.Product.SelectById, dynamicParameters));
+
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return ProductDetail;
 		}
 
 		public async Task<int> UpdateUserDetailsAsync(ProductDetailDTO ProductDetailDTO)
 		{
 			var parameters = new DynamicParameters();
-			Int16 ReturnValue = 0;
+			Int16 ReturnValue = 0; 
 			try
 			{
 				parameters.Add(DBParameter.product.ProductId, ProductDetailDTO.ProductId, DbType.Int32);
-				parameters.Add(DBParameter.product.Name, ProductDetailDTO.Name, DbType.Int32);
+				parameters.Add(DBParameter.product.Name, ProductDetailDTO.Name, DbType.String);
 				parameters.Add(DBParameter.product.Brand, ProductDetailDTO.Brand, DbType.String);
-				parameters.Add(DBParameter.product.Model, ProductDetailDTO.Model, DbType.DateTime);
-				parameters.Add(DBParameter.product.ImageURL, ProductDetailDTO.ImageURL, DbType.Int32);
-				parameters.Add(DBParameter.product.Category, ProductDetailDTO.Category, DbType.Int32);
-				parameters.Add(DBParameter.product.Price, ProductDetailDTO.Price, DbType.Int32);
+				parameters.Add(DBParameter.product.Model, ProductDetailDTO.Model, DbType.String);
+				parameters.Add(DBParameter.product.ImageURL, ProductDetailDTO.ImageURL, DbType.String);
+				parameters.Add(DBParameter.product.Category, ProductDetailDTO.Category, DbType.String);
+				parameters.Add(DBParameter.product.Price, ProductDetailDTO.Price, DbType.String);
 
 				ReturnValue = await _dapperHandler.ExecuteScalarAsync<Int16>(StroredProc.Product.updateProduct, parameters);
 			}

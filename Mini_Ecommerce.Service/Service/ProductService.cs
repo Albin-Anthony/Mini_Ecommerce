@@ -27,7 +27,7 @@ namespace Mini_Ecommerce.Service.Service
 			var ResultArgs = new ResultArgs();
 
 			var ResponseId = await _productRepository.AddUserDetailsAsync(productDetail);
-			if (ResponseId == MessageCatlog.ErrorCodes.Success)
+			if (ResponseId != MessageCatlog.ErrorCodes.Success)
 			{
 				ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
 				ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.Success;
@@ -46,9 +46,32 @@ namespace Mini_Ecommerce.Service.Service
 			return ResultArgs;
 		}
 
-		public Task<ResultArgs> DeleteUserDetailsAsync(int Id)
+		public async Task<ResultArgs> DeleteUserDetailsAsync(int Id)
 		{
-			throw new NotImplementedException();
+			var ResultArgs = new ResultArgs();
+			int objUserDetail = await _productRepository.DeleteUserDetailsAsync(Id);
+			try
+			{
+				if (objUserDetail == 0)
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.DeleteSuccess;
+
+				}
+				else
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Failed;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.SaveFailed;
+				}
+
+
+			}
+			catch (Exception ex)
+			{
+
+			}
+
+			return ResultArgs;
 		}
 
 		public async Task<ResultArgs> GetUserDetailsAsync()
@@ -79,9 +102,29 @@ namespace Mini_Ecommerce.Service.Service
 			return ResultArgs;
 		}
 
-		public Task<ResultArgs> GetUserDetailsByIdAsync(int Id)
+		public async Task<ResultArgs> GetUserDetailsByIdAsync(int Id)
 		{
-			throw new NotImplementedException();
+			ResultArgs ResultArgs = new ResultArgs();
+			try
+			{
+				var objUserDetail = await _productRepository.GetUserDetailsByIdAsync(Id);
+				if (objUserDetail != null)
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.Success;
+					ResultArgs.ResultData = objUserDetail;
+				}
+				else
+				{
+					ResultArgs.StatusCode = MessageCatlog.ErrorCodes.NoRecordFound;
+					ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.NoRecordFound;
+				}
+			}
+			catch (Exception ex)
+			{
+
+			}
+			return ResultArgs;
 		}
 
 		public async Task<ResultArgs> UpdateUserDetailsAsync(ProductDetailDTO productDetail)
