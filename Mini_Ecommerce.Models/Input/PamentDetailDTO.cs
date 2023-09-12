@@ -19,13 +19,11 @@ namespace Mini_Ecommerce.Models.Input
 	public class ProductDetailDTO
 	{
 		public int ProductId { get; set; }
-		public string Name { get; set; }
-		public string Brand { get; set; }
-		public string Model { get; set; }
+		public string ProductName { get; set; }
+		public string ProductDescription { get; set; }
 		public string ImageURL { get; set; }
 		public string Category { get; set; }
 		public string Price { get; set; }
-
-
+		public string Quantity { get; set; }
 	}
 }

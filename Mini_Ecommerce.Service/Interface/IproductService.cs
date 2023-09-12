@@ -10,7 +10,7 @@ namespace Mini_Ecommerce.Service.Interface
 {
 	public interface IproductService
 	{
-		Task<ResultArgs> AddUserDetailsAsync(ProductDetailDTO productDetail);
+		Task<ResultArgs> AddProductDetailsAsync(ProductDetailDTO productDetail);
 		
 		Task<ResultArgs> GetUserDetailsAsync();
 		Task<ResultArgs> GetUserDetailsByIdAsync(int Id);
