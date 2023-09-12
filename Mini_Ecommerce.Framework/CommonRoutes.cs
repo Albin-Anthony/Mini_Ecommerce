@@ -15,6 +15,7 @@ namespace Mini_Ecommerce.Framework
 
         //categories
         public const string CategoriesDetails = "Categories-Details";
+        public const string AddCategory = "Add-Category";
 
         //Orders
         public const string Orders = "Orders";
