@@ -7,13 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mini_Ecommerce.Framework\Mini_Ecommerce.Framework.csproj" />
+    <ProjectReference Include="..\Mini_Ecommerce.Models\Mini_Ecommerce.Models.csproj" />
     <ProjectReference Include="..\Mini_Ecommerce.Repository\Mini_Ecommerce.Repository.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interface\" />
-    <Folder Include="Service\" />
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace Mini_Ecommerce.Framework
 {
-    internal class StroredProc
+    public class StroredProc
     {
-    }
+        public class Payment
+        {
+			public const string InsertPayment = "[dbo].[InsertPayment]";
+			public const string SelectPament = "[dbo].[SelectPament]";
+			
+		}
+
+        public class Product
+        {
+			public const string InsertProduct = "[Product].[InsertProduct]";
+			public const string SelectProduct = "[Product].[SelectProduct]";
+			public const string SelectById = "[Product].[SelectById]";
+			public const string updateProduct = "[Product].[updateProduct]";
+			public const string deleteProduct = "[Product].[deleteProduct]";
+
+
+		}
+	}
 }
