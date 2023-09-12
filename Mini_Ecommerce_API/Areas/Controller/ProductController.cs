@@ -27,9 +27,9 @@ namespace Mini_Ecommerce.API.Areas.Controller
 
 		// GET api/<ProductController>/5
 		[HttpGet("{id}")]
-		public string Get(int id)
+		public async Task<IActionResult> GetUserDetailsByIdAsync(int id)
 		{
-			return "value";
+			return Ok(await _productDetailservice.GetUserDetailsByIdAsync(id));
 		}
 
 		// POST api/<ProductController>
@@ -39,7 +39,7 @@ namespace Mini_Ecommerce.API.Areas.Controller
 			return Ok(await _productDetailservice.AddUserDetailsAsync(productDetail));
 		}
 		// PUT api/<PaymentController>/5
-		
+
 
 		// PUT api/<ProductController>/5
 		[HttpPut("{id}")]
@@ -49,9 +49,10 @@ namespace Mini_Ecommerce.API.Areas.Controller
 		}
 
 		// DELETE api/<ProductController>/5
-		[HttpDelete("{id}")]
-		public void Delete(int id)
+		[HttpDelete]
+		public async Task<IActionResult> DeleteUserDetailsAsync(int Id)
 		{
+			return Ok(await _productDetailservice.DeleteUserDetailsAsync(Id));
 		}
 	}
 }
