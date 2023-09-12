@@ -26,7 +26,7 @@ namespace Mini_Ecommerce.Repository.Repository
         public async Task<int> AddProductDetailsAsync(ProductDetailDTO ProductDetailDTO)
 		{
 			var parameters = new DynamicParameters();
-			Int16 ReturnValue = 0;
+            int ReturnValue = 0;
 			try
 			{
                 parameters.Add(DBParameter.product.ProductId, ProductDetailDTO.ProductId, DbType.Int32);
@@ -34,11 +34,11 @@ namespace Mini_Ecommerce.Repository.Repository
 				parameters.Add(DBParameter.product.ProductDescription, ProductDetailDTO.ProductDescription, DbType.String);
 				parameters.Add(DBParameter.product.ImageURL, ProductDetailDTO.ImageURL, DbType.String);
 				parameters.Add(DBParameter.product.Category, ProductDetailDTO.Category, DbType.String);
-				parameters.Add(DBParameter.product.Price, ProductDetailDTO .Price, DbType.String);
-				parameters.Add(DBParameter.product.Quantity, ProductDetailDTO .Quantity, DbType.String);
+				parameters.Add(DBParameter.product.Price, ProductDetailDTO .Price, DbType.Int32);
+				parameters.Add(DBParameter.product.Quantity, ProductDetailDTO .Quantity, DbType.Int32);
 
 
-				ReturnValue = await _dapperHandler.ExecuteScalarAsync<Int16>(StroredProc.Product.SaveProductDetails, parameters);
+				ReturnValue = await _dapperHandler.ExecuteScalarAsync<int>(StroredProc.Product.SaveProductDetails, parameters);
 			}
 			catch (Exception ex)
 			{
