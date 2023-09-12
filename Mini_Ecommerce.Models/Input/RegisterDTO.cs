@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Mini_Ecommerce.Models.Input
 {
-    internal class RegisterDTO
+    public class RegisterDTO
     {
+        public int CustomerId { get; set; } = 0;
+        public string? FirstName { get; set; }  
+        
+        public string? LastName { get; set; }
+
+        public Int64? PhoneNumber { get; set; }
+        public string? Emailaddress { get; set; }
+        public string? Password { get; set; }
+       
+
     }
 }

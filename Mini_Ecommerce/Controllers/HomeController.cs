@@ -21,6 +21,10 @@ namespace Mini_Ecommerce.Controllers
         {
             return View();
         }
+        public IActionResult LogInPage()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
