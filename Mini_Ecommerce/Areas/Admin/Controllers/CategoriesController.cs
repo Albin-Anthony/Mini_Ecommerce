@@ -16,5 +16,10 @@ namespace Mini_Ecommerce.Areas.Admin.Controllers
         {
             return View();
         }
+        [Route(CommonRoutes.AddCategory)]
+        public IActionResult AddCategory()
+        {
+            return View();
+        }
     }
 }
