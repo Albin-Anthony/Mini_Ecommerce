@@ -10,5 +10,7 @@ namespace Mini_Ecommerce.Repository.Interface
     public interface IRegisterRepositorycs
     {
         Task<int> SaveRegisterDetailsAsync(RegisterDTO registerDetails);
+        Task<int> LoginDetailsAsync(LoginDTO Logindetail);
+
     }
 }

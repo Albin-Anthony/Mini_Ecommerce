@@ -5,7 +5,7 @@ using Mini_Ecommerce.Service.Interface;
 
 namespace Mini_Ecommerce.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
     public class RegisterController : ControllerBase
     {
@@ -22,5 +22,16 @@ namespace Mini_Ecommerce.API.Controllers
         {
             return Ok(await _registerService.SaveRegisterDetailsAsync(registerDetails));
         }
+
+
+        [HttpPost]  //Http method
+        [ActionName("LoginDetailsAsync")]
+
+        public async Task<ActionResult> LoginDetailsAsync([FromBody] LoginDTO Logindetail)
+        {
+            return Ok(await _registerService.LoginDetailsAsync(Logindetail));
+        }
+
+
     }
 }

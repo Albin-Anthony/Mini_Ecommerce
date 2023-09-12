@@ -44,5 +44,25 @@ namespace Mini_Ecommerce.Repository.Repository
             return result;
         }
 
+
+        public async Task<int> LoginDetailsAsync(LoginDTO Logindetail)
+        {
+            int result = 0;
+            var parameters = new DynamicParameters();
+            try
+            {
+                parameters.Add(DBParameter.Login.Email, Logindetail.Email, DbType.String);
+                parameters.Add(DBParameter.Login.Password, Logindetail.Password, DbType.String);
+
+
+                result = (await _configuration.ExecuteScalarAsync<int>(StroredProc.Login.GetLogin, parameters, CommandType.StoredProcedure));
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return result;
+        }
+
     }
 }

@@ -28,6 +28,12 @@ namespace Mini_Ecommerce.Framework
             
         }
 
+		public class Login 
+		{
+            public const string Email = "@Email";
+            public const string Password = "@Password";
+        }
+
 
 
         public class product
