@@ -37,5 +37,24 @@ namespace Mini_Ecommerce.Service.Service
             return resultArgs;
         }
 
+
+        public async Task<ResultArgs> LoginDetailsAsync(LoginDTO Logindetail)
+        {
+            ResultArgs resultArgs = new ResultArgs();
+            int result = (await _RegisterRepository.LoginDetailsAsync(Logindetail));
+            if (result > 0)
+            {
+                resultArgs.StatusCode = 200;
+                resultArgs.MessageTitle = "Login Successfully";
+
+            }
+            else
+            {
+                resultArgs.StatusCode = 204;
+                resultArgs.MessageTitle = "Invalid credentials";
+            }
+
+            return resultArgs;
+        }
     }
 }

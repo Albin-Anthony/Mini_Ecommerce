@@ -11,5 +11,6 @@ namespace Mini_Ecommerce.Service.Interface
     public interface IRegisterService
     {
         Task<ResultArgs> SaveRegisterDetailsAsync(RegisterDTO registerDetails);
+        Task<ResultArgs> LoginDetailsAsync(LoginDTO Logindetail);
     }
 }
