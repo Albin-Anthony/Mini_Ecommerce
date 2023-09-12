@@ -29,7 +29,7 @@ namespace Mini_Ecommerce.Framework
 
         public class Product
         {
-			public const string InsertProduct = "[Product].[InsertProduct]";
+			public const string SaveProductDetails = "[dbo].[SaveProductDetails]";
 			public const string SelectProduct = "[Product].[SelectProduct]";
 			public const string SelectById = "[Product].[SelectById]";
 			public const string updateProduct = "[Product].[updateProduct]";

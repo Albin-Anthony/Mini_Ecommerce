@@ -22,11 +22,11 @@ namespace Mini_Ecommerce.Service.Service
 		}
 
         //insert
-        public async Task<ResultArgs> AddUserDetailsAsync(ProductDetailDTO productDetail)
+        public async Task<ResultArgs> AddProductDetailsAsync(ProductDetailDTO productDetail)
 		{
 			var ResultArgs = new ResultArgs();
 
-			var ResponseId = await _productRepository.AddUserDetailsAsync(productDetail);
+			var ResponseId = await _productRepository.AddProductDetailsAsync(productDetail);
 			if (ResponseId != MessageCatlog.ErrorCodes.Success)
 			{
 				ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;

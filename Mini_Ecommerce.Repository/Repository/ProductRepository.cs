@@ -23,21 +23,22 @@ namespace Mini_Ecommerce.Repository.Repository
 			_dapperHandler = dapperHandler;
 
 		}
-        public async Task<int> AddUserDetailsAsync(ProductDetailDTO ProductDetailDTO)
+        public async Task<int> AddProductDetailsAsync(ProductDetailDTO ProductDetailDTO)
 		{
 			var parameters = new DynamicParameters();
-			Int16 ReturnValue = 0;
+            int ReturnValue = 0;
 			try
 			{
-				parameters.Add(DBParameter.product.Name, ProductDetailDTO.Name, DbType.String);
-				parameters.Add(DBParameter.product.Brand, ProductDetailDTO.Brand, DbType.String);
-				parameters.Add(DBParameter.product.Model, ProductDetailDTO.Model, DbType.String);
+                parameters.Add(DBParameter.product.ProductId, ProductDetailDTO.ProductId, DbType.Int32);
+                parameters.Add(DBParameter.product.ProductName, ProductDetailDTO.ProductName, DbType.String);
+				parameters.Add(DBParameter.product.ProductDescription, ProductDetailDTO.ProductDescription, DbType.String);
 				parameters.Add(DBParameter.product.ImageURL, ProductDetailDTO.ImageURL, DbType.String);
 				parameters.Add(DBParameter.product.Category, ProductDetailDTO.Category, DbType.String);
-				parameters.Add(DBParameter.product.Price, ProductDetailDTO .Price, DbType.String);
+				parameters.Add(DBParameter.product.Price, ProductDetailDTO .Price, DbType.Int32);
+				parameters.Add(DBParameter.product.Quantity, ProductDetailDTO .Quantity, DbType.Int32);
 
 
-				ReturnValue = await _dapperHandler.ExecuteScalarAsync<Int16>(StroredProc.Product.InsertProduct, parameters);
+				ReturnValue = await _dapperHandler.ExecuteScalarAsync<int>(StroredProc.Product.SaveProductDetails, parameters);
 			}
 			catch (Exception ex)
 			{
@@ -107,14 +108,14 @@ namespace Mini_Ecommerce.Repository.Repository
 			try
 			{
 				parameters.Add(DBParameter.product.ProductId, ProductDetailDTO.ProductId, DbType.Int32);
-				parameters.Add(DBParameter.product.Name, ProductDetailDTO.Name, DbType.String);
-				parameters.Add(DBParameter.product.Brand, ProductDetailDTO.Brand, DbType.String);
-				parameters.Add(DBParameter.product.Model, ProductDetailDTO.Model, DbType.String);
-				parameters.Add(DBParameter.product.ImageURL, ProductDetailDTO.ImageURL, DbType.String);
-				parameters.Add(DBParameter.product.Category, ProductDetailDTO.Category, DbType.String);
-				parameters.Add(DBParameter.product.Price, ProductDetailDTO.Price, DbType.String);
+                parameters.Add(DBParameter.product.ProductName, ProductDetailDTO.ProductName, DbType.String);
+                parameters.Add(DBParameter.product.ProductDescription, ProductDetailDTO.ProductDescription, DbType.String);
+                parameters.Add(DBParameter.product.ImageURL, ProductDetailDTO.ImageURL, DbType.String);
+                parameters.Add(DBParameter.product.Category, ProductDetailDTO.Category, DbType.String);
+                parameters.Add(DBParameter.product.Price, ProductDetailDTO.Price, DbType.String);
+                parameters.Add(DBParameter.product.Quantity, ProductDetailDTO.Quantity, DbType.String);
 
-				ReturnValue = await _dapperHandler.ExecuteScalarAsync<Int16>(StroredProc.Product.updateProduct, parameters);
+                ReturnValue = await _dapperHandler.ExecuteScalarAsync<Int16>(StroredProc.Product.updateProduct, parameters);
 			}
 			catch (Exception ex)
 			{
