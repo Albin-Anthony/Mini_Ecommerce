@@ -7,5 +7,6 @@ namespace Mini_Ecommerce.API.Areas.Product
     [ApiController]
     public class ProductController : ControllerBase
     {
+
     }
 }

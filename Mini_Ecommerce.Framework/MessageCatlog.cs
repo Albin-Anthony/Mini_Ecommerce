@@ -11,7 +11,7 @@ namespace Mini_Ecommerce.Framework
 		public static class MessageTitle
 		{
 			public const string UserDetails = "User Details";
-			public const string UserRole = "User Role";
+			public const string CartDetails = "Cart Details";
 			public const string TeamPlan = "Team Plan";
 			public const string EmployeeDetails = "EmployeeDetails";
 

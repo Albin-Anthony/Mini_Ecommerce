@@ -23,10 +23,15 @@ namespace Mini_Ecommerce.API
 			// UserDetails 
 			services.AddTransient<IpaymentRepository, PaymentRepository>();
 			services.AddTransient<IpaymentService, PaymentService>();
+			//UserProfileDetails
+            services.AddTransient<IUserDetailsRepository, UserDetailsRepository>();
+            services.AddTransient<IUserDetailsService, UserDetailsService>();
+			//CartDetails
+            services.AddTransient<ICartsDetailsRepository, CartDetailsRepository>();
+            services.AddTransient<IShopCartsService, ShopCartsService>();
 
 
-
-			services.AddControllers();
+            services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			services.AddEndpointsApiExplorer();
 
