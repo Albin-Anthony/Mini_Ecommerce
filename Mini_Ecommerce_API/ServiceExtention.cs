@@ -27,6 +27,13 @@ namespace Mini_Ecommerce.API
 			services.AddTransient<IProductRepository, ProductRepository>();
 
 			services.AddTransient<IproductService, ProductService>();
+			// services.AddTransient<ICartsDetailsRepository, CartDetailsRepository>();
+
+			services.AddTransient<IShopCartsService, ShopCartsService>();
+            services.AddTransient<ICartsDetailsRepository, CartsDetailsRepository>();
+			services.AddTransient<IUserDetailsRepository, UserDetailsRepository>();
+
+			services.AddTransient<IUserDetailsService, UserDetailsService>();
 
 
 
