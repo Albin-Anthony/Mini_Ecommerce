@@ -14,59 +14,67 @@
     </div>
 </div>
 <!-- end page title -->
-                <div class="card">
-                    <div class="card-body p-4">
+<div class="card">
+    <div class="card-body p-4">
         <form action="#">
-                        <div class="row">
-                            <h4 class="ml-2 mt-3 mt-lg-0">Create an Account?</h4>
-                            <div class="col-lg-6">
-                                <div class="p-sm-3">
-                                  
-                                        <div class="mb-3">
-                                            <label for="categoryname" class="form-label">Category Name</label><span class="text-danger">*</span>
-                                            <input class="form-control" type="text" id="categoryname" placeholder="Enter your  Category Name" required>
-                                        </div>
-                                        @*<div class="mb-3">
-                                            <label for="emailaddress2" class="form-label">Phone Number</label>
-                                            <input class="form-control" type="email" id="emailaddress2" required placeholder="Enter your Phone Number">
-                                        </div>*@
-                                                                           
-                                </div>
-                            </div> <!-- end col -->
+            <div class="row">
+                <h4 class="ml-2 mt-3 mt-lg-0">Create Product</h4>
+                <div class="col-lg-6">
+                    <div class="p-sm-3">
 
-                            <div class="col-lg-6">
-                                <div class="p-sm-3">
-                                  
-                                        <div class="mb-3">
-                            <label for="CategoryDescription" class="form-label">Category Description</label>
-                                                      <textarea class="form-control">
-
-                            </textarea>
-                                        </div>
-                                        
-                                        
-                                        <div>
-                                           
-                                            <div class="form-check pt-1 overflow-hidden">
-                                              
-                                            </div>
-                                        </div>
-                                  
-                                </div>
-
-
-                            </div> <!-- end col -->
+                        <div class="mb-3">
+                            <label for="Productname" class="form-label">Product Name</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="Productname" placeholder="Enter your  Product Name" required>
                         </div>
-                        <!-- end row-->
+                        <div class="mb-3">
+                            <label for="productdescription" class="form-label">Product Description</label>
 
-                        <div class="row mt-3">
-                            <div class="col-12 text-center">
+                            <textarea class="form-control">
+
+                         </textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Image" class="form-label">Image</label>
+                            <input type="file">
+                        </div>
+                        <div class="mb-3">
+                            <label for="Category" class="form-label">Category</label><span class="text-danger">*</span>
+                            <select>
+                                <optgroup label="optgroup">
+                                    <option>Mobile</option>
+                                    <option>Laptop</option>
+                                    <option>Headset</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Price" class="form-label">Price</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="Price" placeholder="Enter your  Price" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Quantity" class="form-label">Quantity</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="Quantity" placeholder="Enter your  Quantity" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Publishonsite" class="form-label">Publish On Site</label><span class="text-danger">*</span>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+
+
+            </div>
+            <!-- end row-->
+
+            <div class="row mt-3">
+                <div class="col-12 text-center">
                     <button class="btn btn-primary" type="submit">Save</button>
                     <a href="product-List-view" class="btn btn-danger">Cancel</a>
 
-                            </div> <!-- end col -->
-                        </div>
-                          </form>
-                    </div> <!-- end card-body -->
-                </div>
-                <!-- end card -->
+                </div> <!-- end col -->
+            </div>
+        </form>
+    </div> <!-- end card-body -->
+</div>
+<!-- end card -->

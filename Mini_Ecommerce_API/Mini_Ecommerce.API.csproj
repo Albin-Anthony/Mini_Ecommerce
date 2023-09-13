@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mini_Ecommerce.DBEngine\Mini_Ecommerce.DBEngine.csproj" />
     <ProjectReference Include="..\Mini_Ecommerce.Service\Mini_Ecommerce.Service.csproj" />
   </ItemGroup>
 
