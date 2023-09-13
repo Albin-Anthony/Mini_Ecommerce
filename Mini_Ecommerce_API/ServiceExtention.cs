@@ -20,12 +20,14 @@ namespace Mini_Ecommerce.API
 			// Sql Server Repository
 			services.AddTransient<IDapperHandler, DapperHandler>();
 
-			// UserDetails 
-			services.AddTransient<IpaymentRepository, PaymentRepository>();
+            // UserDetails 
+            services.AddTransient<IRegisterRepositorycs, RegisterRepository>();
+            services.AddTransient<IRegisterService, RegisterService>();
+
+            services.AddTransient<IpaymentRepository, PaymentRepository>();
 			services.AddTransient<IpaymentService, PaymentService>();
 
 			services.AddTransient<IProductRepository, ProductRepository>();
-
 			services.AddTransient<IproductService, ProductService>();
 
 
