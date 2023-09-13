@@ -26,11 +26,13 @@ namespace Mini_Ecommerce.API
 
 			services.AddTransient<IProductRepository, ProductRepository>();
 
-			services.AddTransient<IproductService, ProductService>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
 
+            services.AddTransient<IproductService, ProductService>();
 
+            services.AddTransient<ICategoryService, CategoryService>();
 
-			services.AddControllers();
+            services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			services.AddEndpointsApiExplorer();
 

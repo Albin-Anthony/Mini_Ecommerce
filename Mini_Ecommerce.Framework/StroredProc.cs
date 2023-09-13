@@ -25,5 +25,13 @@ namespace Mini_Ecommerce.Framework
 
 
 		}
+		public class Category
+		{
+			public const string selectCategory = "[dbo].[GetCategory]";
+            public const string SaveOrUpdateCategory = " [dbo].[SaveOrUpdateCategory]";
+            public const string DeleteCategory = " [dbo].[DeleteCategory]";
+
+
+        } 
 	}
 }
