@@ -34,6 +34,7 @@ namespace Mini_Ecommerce.API.Areas.Controller
 
 		// POST api/<ProductController>
 		[HttpPost]
+		[ActionName("AddUserDetailsAsync")]
 		public async Task<IActionResult> AddUserDetailsAsync([FromBody] ProductDetailDTO productDetail)
 		{
 			return Ok(await _productDetailservice.AddUserDetailsAsync(productDetail));
