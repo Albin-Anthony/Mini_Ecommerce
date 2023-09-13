@@ -13,9 +13,9 @@ namespace Mini_Ecommerce.Framework
 			public const string UserDetails = "User Details";
 			public const string UserRole = "User Role";
 			public const string TeamPlan = "Team Plan";
-			public const string EmployeeDetails = "EmployeeDetails";
+			public const string CartDetails = "EmployeeDetails";
 
-		}
+        }
 
 		public static class ErrorCodes
 		{
