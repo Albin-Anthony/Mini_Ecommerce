@@ -46,5 +46,24 @@ namespace Mini_Ecommerce.Framework
 			public const string Category = "@Category";
 			public const string Price = "@Price";
 		}
-	}
+
+        public class UserDetails
+        {
+            public const string UserId = "@UserId";
+            public const string UserName = "@UserName";
+            public const string Email = "@Email";
+            public const string FirstName = "@FirstName";
+            public const string LastName = "@LastName";
+            public const string DOB = "@DOB";
+            public const string ImageURL = "@ImageURL";
+            public const string Address = "@Address";
+        }
+        public class CartDetails
+        {
+            public const string CartId = "@CartId";
+            public const string UserId = "@UserId";
+            public const string CreationDate = "@CreationDate";
+
+        }
+    }
 }
