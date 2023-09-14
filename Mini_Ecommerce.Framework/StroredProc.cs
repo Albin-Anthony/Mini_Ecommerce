@@ -51,6 +51,14 @@ namespace Mini_Ecommerce.Framework
             public const string UpdateCart = "[ShopCarts].[UpdateShoppingCart]";
             public const string SelectAllCart = "[ShopCarts].[SelectAllShoppingCarts]";
 
-        }
-    }
+		}
+		public class Category
+		{
+			public const string selectCategory = "[dbo].[GetCategory]";
+            public const string SaveOrUpdateCategory = " [dbo].[SaveOrUpdateCategory]";
+            public const string DeleteCategory = " [dbo].[DeleteCategory]";
+
+
+        } 
+	}
 }
