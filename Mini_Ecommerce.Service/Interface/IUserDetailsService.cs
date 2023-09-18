@@ -12,5 +12,6 @@ namespace Mini_Ecommerce.Service.Interface
     {
         Task<ResultArgs> SerGetUserDetailsByIdAsync(int Id);
         Task<ResultArgs> SerInsertUserDetailsAsync(UserDetailDTO user);
+        Task<ResultArgs> SerUpdateUserDetailsAsync(UserDetailDTO userDetail);
     }
 }

@@ -3,6 +3,7 @@ using Mini_Ecommerce.Models;
 using Mini_Ecommerce.Models.Input;
 using Mini_Ecommerce.Models.Output;
 using Mini_Ecommerce.Repository.Interface;
+using Mini_Ecommerce.Repository.Repository;
 using Mini_Ecommerce.Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -60,6 +61,31 @@ namespace Mini_Ecommerce.Service.Service
                 resultArgs.StatusMessage = MessageCatlog.ErrorMessages.BadRequest;
             }
             return resultArgs;
+        }
+        public async Task<ResultArgs> SerUpdateUserDetailsAsync(UserDetailDTO userDetail)
+        {
+            ResultArgs ResultArgs = new ResultArgs();
+            try
+            {
+                int objUserDetail = await _UserRepo.RepUpdateUserDetailsAsync(userDetail);
+                if (objUserDetail == 0)
+                {
+                    ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Success;
+                    ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.Success;
+                    ResultArgs.MessageTitle = MessageCatlog.MessageTitle.UserDetails;
+
+                }
+                else
+                {
+                    ResultArgs.StatusCode = MessageCatlog.ErrorCodes.Failed;
+                    ResultArgs.StatusMessage = MessageCatlog.ErrorMessages.SaveFailed;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return ResultArgs;
         }
     }
 }

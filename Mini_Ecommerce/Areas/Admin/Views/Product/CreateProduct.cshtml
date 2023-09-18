@@ -24,8 +24,9 @@
 
                         <div class="mb-3">
                             <label for="Productname" class="form-label">Product Name</label><span class="text-danger">*</span>
-                            <input class="form-control" type="text" id="Productname" placeholder="Enter your  Product Name" required>
+                            <input class="form-control" type="text" id="productname" placeholder="Enter your  Product Name" required>
                         </div>
+                      
                         <div class="mb-3">
                             <label for="productdescription" class="form-label">Product Description</label>
 
@@ -36,7 +37,7 @@
 
                         <div class="mb-3">
                             <label for="Image" class="form-label">Image</label>
-                            <input type="file">
+                            <input type="file" id="image">
                         </div>
                         <div class="mb-3">
                             <label for="Category" class="form-label">Category</label><span class="text-danger">*</span>
@@ -69,7 +70,7 @@
 
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary" type="submit">Save</button>
+                    <button class="btn btn-primary" id="btnSmt" type="submit">Save</button>
                     <a href="product-List-view" class="btn btn-danger">Cancel</a>
 
                 </div> <!-- end col -->
@@ -78,3 +79,6 @@
     </div> <!-- end card-body -->
 </div>
 <!-- end card -->
+
+
+

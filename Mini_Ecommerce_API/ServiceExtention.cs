@@ -37,11 +37,21 @@ namespace Mini_Ecommerce.API
 
             services.AddTransient<ICategoryService, CategoryService>();
 
+            services.AddTransient<ICartsDetailsRepository, CartsDetailsRepository>();
+            services.AddTransient<ICartsService, CartsService>();
+            services.AddTransient<IUserDetailsRepository, UserDetailsRepository>();
+            services.AddTransient<IUserDetailsService, UserDetailsService> ();
+
             services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			services.AddEndpointsApiExplorer();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("https://localhost:7178"));
+            });
 
-			return services;
+            return services;
 		}
 		public static IServiceCollection AddSwaggerGenSetups(this IServiceCollection services)
 		{

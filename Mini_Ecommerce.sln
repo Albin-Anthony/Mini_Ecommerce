@@ -7,15 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini_Ecommerce", "Mini_Ecom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini_Ecommerce.API", "Mini_Ecommerce_API\Mini_Ecommerce.API.csproj", "{E33A14AD-3DB7-411D-901A-1D2A561C67AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini_Ecommerce.Service", "Mini_Ecommerce.Service\Mini_Ecommerce.Service.csproj", "{E6F0E6D2-F997-4D49-A0DC-B46DA941ACFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini_Ecommerce.Service", "Mini_Ecommerce.Service\Mini_Ecommerce.Service.csproj", "{E6F0E6D2-F997-4D49-A0DC-B46DA941ACFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini_Ecommerce.Repository", "Mini_Ecommerce.Repository\Mini_Ecommerce.Repository.csproj", "{C6AC006E-182F-4A9C-B37F-BC501D7B021C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini_Ecommerce.Repository", "Mini_Ecommerce.Repository\Mini_Ecommerce.Repository.csproj", "{C6AC006E-182F-4A9C-B37F-BC501D7B021C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini_Ecommerce.Framework", "Mini_Ecommerce.Framework\Mini_Ecommerce.Framework.csproj", "{3D2B808F-190C-4FB1-9497-E968D937D085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini_Ecommerce.Framework", "Mini_Ecommerce.Framework\Mini_Ecommerce.Framework.csproj", "{3D2B808F-190C-4FB1-9497-E968D937D085}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini_Ecommerce.DBEngine", "Mini_Ecommerce.DBEngine\Mini_Ecommerce.DBEngine.csproj", "{D8F26E28-7ADE-4604-9501-E086369E5AC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini_Ecommerce.DBEngine", "Mini_Ecommerce.DBEngine\Mini_Ecommerce.DBEngine.csproj", "{D8F26E28-7ADE-4604-9501-E086369E5AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mini_Ecommerce.Models", "Mini_Ecommerce.Models\Mini_Ecommerce.Models.csproj", "{B17F04C9-4140-4151-867B-CED60567F783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mini_Ecommerce.Models", "Mini_Ecommerce.Models\Mini_Ecommerce.Models.csproj", "{B17F04C9-4140-4151-867B-CED60567F783}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

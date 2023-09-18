@@ -41,6 +41,8 @@ namespace Mini_Ecommerce.Framework
         {
             public const string SelectUserById = "[User].[GetUserByID]";
             public const string InsertUser = "[User].[InsertUser]";
+            public const string UpdateUser = "[User].[UpdateUser]";
+
 
         }
         public static class CartDetails

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\User\Views\Dashboard\" />
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>

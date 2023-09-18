@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Mini_Ecommerce.Framework;
 using Mini_Ecommerce.Models.Input;
 using Mini_Ecommerce.Service.Interface;
 
@@ -18,8 +19,18 @@ namespace Mini_Ecommerce.API.Controllers
         [HttpPost]  //Http method
         [ActionName("SaveRegisterDetailsAsync")]
 
-        public async Task<ActionResult> SaveRegisterDetailsAsync([FromBody]RegisterDTO registerDetails)
+        public async Task<ActionResult> SaveRegisterDetailsAsync([FromBody] RegisterDTO registerDetails)
         {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.SendErrorToText(ex);
+
+            }
+
             return Ok(await _registerService.SaveRegisterDetailsAsync(registerDetails));
         }
 

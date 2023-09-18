@@ -12,11 +12,11 @@ using Mini_Ecommerce.Models.Output;
 
 namespace Mini_Ecommerce.Service.Service
 {
-    public class ShopCartsService : IShopCartsService
+    public class CartsService : ICartsService
     {
         private readonly ICartsDetailsRepository _CartRepo;
 
-        public ShopCartsService(ICartsDetailsRepository CartsRepo)
+        public CartsService(ICartsDetailsRepository CartsRepo)
         {
             _CartRepo = CartsRepo;
 

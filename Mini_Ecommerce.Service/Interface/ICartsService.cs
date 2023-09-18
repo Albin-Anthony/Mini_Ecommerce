@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Mini_Ecommerce.Service.Interface
 {
-    public interface IShopCartsService
+    public interface ICartsService
     {
         Task<ResultArgs> SerGetAllCartDetailsAsync();
         Task<ResultArgs> SerGetCartDetailsByIdAsync(int Id);

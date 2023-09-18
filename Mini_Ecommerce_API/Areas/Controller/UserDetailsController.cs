@@ -5,7 +5,7 @@ using Mini_Ecommerce.Service.Interface;
 
 namespace Mini_Ecommerce.API.Areas.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[Action]")]
     [ApiController]
     public class UserDetailsController : ControllerBase
     {
@@ -28,6 +28,12 @@ namespace Mini_Ecommerce.API.Areas.Controller
         public async Task<IActionResult> InsertUserDetailsAsync([FromBody] UserDetailDTO obj)
         {
             return Ok(await _userDetailsSer.SerInsertUserDetailsAsync(obj));
+        }
+        [HttpPut("{id}")]
+        [ActionName("UpdateUserDetailsAsync")]
+        public async Task<IActionResult> UpdateUserDetailsAsync([FromBody] UserDetailDTO userDetail)
+        {
+            return Ok(await _userDetailsSer.SerUpdateUserDetailsAsync(userDetail));
         }
 
 

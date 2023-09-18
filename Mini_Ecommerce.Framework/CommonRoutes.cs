@@ -22,6 +22,7 @@ namespace Mini_Ecommerce.Framework
 
         //Cart
         public const string Cart = "Cart";
+        public const string UserProfile = "UserProfile";
 
 
 

@@ -10,9 +10,9 @@ namespace Mini_Ecommerce.API.Areas.Controller
     public class ShopCartsDetailsController : ControllerBase
     {
 
-        private readonly IShopCartsService _cartsDetailsService;
+        private readonly ICartsService _cartsDetailsService;
 
-        public ShopCartsDetailsController(IShopCartsService cartsDetailsService)
+        public ShopCartsDetailsController(ICartsService cartsDetailsService)
         {
             _cartsDetailsService = cartsDetailsService;
 
