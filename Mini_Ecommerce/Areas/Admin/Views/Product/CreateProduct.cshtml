@@ -1,80 +1,107 @@
-﻿<!-- start page title -->
+﻿
+
+   <!-- Start page title -->
 <div class="row">
     <div class="col-12">
         <div class="page-title-box page-title-box-alt">
-            <h4 class="page-title"> Create Product </h4>
+            <h4 class="page-title">Create Product</h4>
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    @*<li class="breadcrumb-item"><a href="javascript: void(0);">Minton</a></li>
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">eCommerce</a></li>
-                    <li class="breadcrumb-item active">Product List</li>*@
+                    <!-- Breadcrumb items here -->
                 </ol>
             </div>
         </div>
     </div>
 </div>
-<!-- end page title -->
+<!-- End page title -->
 <div class="card">
     <div class="card-body p-4">
-        <form action="#">
+        <form id="productForm" action="#">
             <div class="row">
                 <h4 class="ml-2 mt-3 mt-lg-0">Create Product</h4>
                 <div class="col-lg-6">
                     <div class="p-sm-3">
-
                         <div class="mb-3">
-                            <label for="Productname" class="form-label">Product Name</label><span class="text-danger">*</span>
-                            <input class="form-control" type="text" id="Productname" placeholder="Enter your  Product Name" required>
+                            <label for="productname" class="form-label">Product Name</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="productname" placeholder="Enter your Product Name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="productdescription" class="form-label">Product Description</label>
-
-                            <textarea class="form-control">
-
-                         </textarea>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="Image" class="form-label">Image</label>
-                            <input type="file">
+                            <label for="brand" class="form-label">Brand</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="brand" placeholder="Enter Brand" required>
                         </div>
                         <div class="mb-3">
-                            <label for="Category" class="form-label">Category</label><span class="text-danger">*</span>
-                            <select>
-                                <optgroup label="optgroup">
-                                    <option>Mobile</option>
-                                    <option>Laptop</option>
-                                    <option>Headset</option>
-                                </optgroup>
+                            <label for="model" class="form-label">Model</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="model" placeholder="Enter Model" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="catogery" class="form-label">Category</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="catogery" placeholder="Enter Category" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">ImageURL</label>
+                            <input type="file" id="image">
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Category</label><span class="text-danger">*</span>
+                            <select id="category">
+                                <option value="Mobile">Mobile</option>
+                                <option value="Laptop">Laptop</option>
+                                <option value="Headset">Headset</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="Price" class="form-label">Price</label><span class="text-danger">*</span>
-                            <input class="form-control" type="text" id="Price" placeholder="Enter your  Price" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Quantity" class="form-label">Quantity</label><span class="text-danger">*</span>
-                            <input class="form-control" type="text" id="Quantity" placeholder="Enter your  Quantity" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="Publishonsite" class="form-label">Publish On Site</label><span class="text-danger">*</span>
-                            <input type="checkbox">
+                            <label for="price" class="form-label">Price</label><span class="text-danger">*</span>
+                            <input class="form-control" type="text" id="price" placeholder="Enter Price" required>
                         </div>
                     </div>
-                </div> <!-- end col -->
-
-
+                </div>
             </div>
-            <!-- end row-->
-
+            <!-- end row -->
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary" type="submit">Save</button>
+                    <button class="btn btn-primary" id="submit" type="submit">Save</button>
                     <a href="product-List-view" class="btn btn-danger">Cancel</a>
-
-                </div> <!-- end col -->
+                </div>
+                
             </div>
+
+            <script>
+                $(document).ready(function () {
+                    // Attach a submit event handler to the form
+                    $("#productForm").submit(function (event) {
+                        event.preventDefault(); // Prevent the default form submission
+
+                        // Data to be sent in the POST request
+                        var postData = {
+                            Name: $('#productname').val(),
+                            Brand: $('#brand').val(),
+                            Model: $('#model').val(),
+                            ImageURL: $('#image').val(),
+                            Category: $('#category').val(),
+                            Price: $('#price').val(),
+                        };
+
+                        // Perform an AJAX POST request
+                        $.ajax({
+                            type: "POST",
+                            url: "https://localhost:7118/api/Product/AddUserDetailsAsync", // Replace with your server's API endpoint
+                            data: JSON.stringify(postData), // Convert the data to JSON format
+                            contentType: "application/json", // Set the content type to JSON
+                            success: function (response) {
+                                // Handle the successful response from the server
+                                console.log("Server response:", response);
+                            },
+                            error: function (error) {
+                                // Handle any errors that occur during the request
+                                console.error("Error:", error);
+                            }
+                        });
+                    });
+                });
+            </script>
         </form>
-    </div> <!-- end card-body -->
+    </div>
+    <!-- end card-body -->
 </div>
 <!-- end card -->
+<!-- Ajax Call For Create Product -->
