@@ -8,5 +8,9 @@ namespace Mini_Ecommerce.Areas.User.Controllers
         {
             return View();
         }
+        public IActionResult UserProfile()
+        {
+            return View();
+        }
     }
 }
