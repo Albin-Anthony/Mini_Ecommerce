@@ -17,14 +17,14 @@ namespace Mini_Ecommerce.API.Controllers
 
         [HttpPost]  //Http method
         [ActionName("SaveRegisterDetailsAsync")]
-
+        
         public async Task<ActionResult> SaveRegisterDetailsAsync([FromBody]RegisterDTO registerDetails)
         {
             return Ok(await _registerService.SaveRegisterDetailsAsync(registerDetails));
         }
 
 
-        [HttpPost]  //Http method
+        [HttpPost]  //Http methoda
         [ActionName("LoginDetailsAsync")]
 
         public async Task<ActionResult> LoginDetailsAsync([FromBody] LoginDTO Logindetail)

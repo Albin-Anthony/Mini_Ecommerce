@@ -33,6 +33,7 @@ namespace Mini_Ecommerce.Repository.Repository
                 parameters.Add(DBParameter.Register.PhoneNumber, registerDetails.PhoneNumber, DbType.Int64);
                 parameters.Add(DBParameter.Register.Emailaddress, registerDetails.Emailaddress, DbType.String);
                 parameters.Add(DBParameter.Register.Password, registerDetails.Password, DbType.String);
+                parameters.Add(DBParameter.Register.ConfirmPassword, registerDetails.ConfirmPassword, DbType.String);
 
 
                 result = (await _configuration.ExecuteScalarAsync<int>(StroredProc.Register.SaveRegister, parameters, CommandType.StoredProcedure));
