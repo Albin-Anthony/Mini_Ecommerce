@@ -16,7 +16,8 @@ namespace Mini_Ecommerce.Models.Input
         public Int64? PhoneNumber { get; set; }
         public string? Emailaddress { get; set; }
         public string? Password { get; set; }
-       
+        public string? ConfirmPassword { get; set; }
+
 
     }
     public class LoginDTO
